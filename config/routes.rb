@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'task/index'
   get 'task/create'
   get 'task/finished'
+  get 'task/reopen'
+  get 'task/delete'  
 end
