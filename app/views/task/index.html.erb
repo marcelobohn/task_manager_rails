@@ -1,7 +1,7 @@
 <h1>Gerenciador de tarefas</h1>
 
 <h2>Cadastrar nova</h2>
-<%= form_tag(action: 'create', method: 'post') do %>
+<%= form_tag({action: 'create'}, {method: 'get'}) do %>
   <%= label_tag(:description, "Descrição:") %>
   <%= text_field_tag(:description) %>
   <%= submit_tag("Cadastrar") %>
@@ -13,7 +13,7 @@
     <%= task.finished ? 'Concluída' : 'Pendente' %>&nbsp | &nbsp
     <b><%= task.description %></b><br />    
     <%#= button_to 'Concluir', action: :finished, method: :post, remote: true, params: { id: task.id } unless task.finished %>
-    <%= link_to 'Concluir', action: :finished, params: { id: task.id } %>
+    <%= link_to 'Concluir', action: :finished, params: { id: task.id }  unless task.finished %>
     <hr />
   </div>
 <% end %>
