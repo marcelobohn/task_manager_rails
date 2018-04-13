@@ -24,4 +24,14 @@ class TaskController < ApplicationController
     task.delete if task
     redirect_to action: 'index'    
   end 
+  
+  def edit
+    @task = Task.find_by_id(params[:id]) 
+  end
+  
+  def update
+    task = Task.find_by_id(params[:id]) 
+    task.update_attribute(:description, params[:description]) if task
+    redirect_to action: 'index'    
+  end
 end

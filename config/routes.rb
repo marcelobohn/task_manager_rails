@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'task/finished'
   get 'task/reopen'
   get 'task/delete'  
+  get 'task/edit'    
+  get 'task/update'      
 end
